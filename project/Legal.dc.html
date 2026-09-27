@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f3ee;color:#141312;font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#141312;text-decoration:underline;text-underline-offset:3px}a:hover{color:oklch(0.62 0.14 70)}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#f6f3ee">
+  <header style="position:sticky;top:0;z-index:10;background:rgba(246,243,238,0.92);backdrop-filter:blur(10px);border-bottom:1px solid #e3ddd3">
+    <div style="max-width:1320px;margin:0 auto;padding:14px clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="Off Stage Productions.dc.html" style="display:flex"><img src="assets/logo.png" alt="Off Stage Productions" style="height:44px;width:auto;display:block"></a>
+      <a href="Off Stage Productions.dc.html" style="font-size:15px;font-weight:500;text-decoration:none">← Back to site</a>
+    </div>
+  </header>
+
+  <section data-screen-label="Legal header" style="background:#0f0e0d;color:#f6f3ee">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,100px) clamp(20px,4vw,48px) clamp(40px,5vw,64px);display:grid;gap:20px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:oklch(0.8 0.12 75)">Legal</div>
+      <h1 style="margin:0;font-weight:800;font-size:clamp(40px,6.5vw,88px);line-height:0.95;letter-spacing:-0.035em">{{ title }}</h1>
+      <p style="margin:0;font-size:16px;color:#cfc8bc">Last updated 27 September 2026 · Flykraft Synergies Private Limited</p>
+    </div>
+  </section>
+
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
+    <nav style="display:flex;flex-wrap:wrap;flex-direction:column;gap:6px;flex:0 0 240px;max-width:100%">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+        <a href="{{ t.href }}" style="{{ t.style }}">{{ t.label }}</a>
+      </sc-for>
+    </nav>
+
+    <article style="flex:1 1 480px;max-width:760px;font-size:17px;line-height:1.7;color:#3d3832;display:grid;gap:18px;min-width:0">
+
+      <sc-if value="{{ isPrivacy }}" hint-placeholder-val="{{ true }}">
+        <p style="margin:0">This Privacy Policy explains how Flykraft Synergies Private Limited, operating as Off Stage Productions ("Off Stage", "we", "us"), collects, uses, shares and protects personal data when you visit our website, contact us, or engage us for events and productions. We process personal data in line with the Digital Personal Data Protection Act, 2023, the Information Technology Act, 2000 and the rules made under them.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">1. Information we collect</h2>
+        <p style="margin:0">Details you give us: name, email address, phone number, company name, event date, venue, budget, guest numbers and any other information you share in enquiries, briefs, calls or messages. Booking and billing details: billing name and address, GST number and payment references. We do not store card or bank credentials; payments are handled by banks or payment gateways. Automatically collected data: IP address, device and browser type, pages visited and time spent, through cookies and similar technologies (see our <a href="#cookies">Cookie Policy</a>). Event media: photographs and video recorded at events we produce, which may include attendees.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">2. How we use it</h2>
+        <p style="margin:0">To respond to enquiries and prepare proposals and quotations. To plan, produce and deliver events, and coordinate with venues, vendors and crew. To issue invoices, collect payments and meet tax and accounting obligations. To improve our website and services. To send updates about our work, only where you have agreed; you can opt out at any time. To meet legal obligations and protect our rights.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">3. Consent and legitimate uses</h2>
+        <p style="margin:0">We process personal data with your consent, or for legitimate uses permitted by law, such as performing a contract you have asked us to enter into. You may withdraw consent at any time by writing to us. Withdrawal does not affect processing already carried out, and may limit our ability to deliver services.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">4. Sharing</h2>
+        <p style="margin:0">We do not sell personal data. We share it only as needed with venues, vendors, technical crew and subcontractors engaged for your event; with service providers for hosting, email, analytics, payments and accounting; and with government or law-enforcement authorities where required by law. Everyone we share data with is expected to protect it and use it only for the stated purpose.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">5. Event photography</h2>
+        <p style="margin:0">We may use photos and videos from events we produce in our portfolio, website and social media, including <a href="https://instagram.com/offstage.pr" target="_blank" rel="noopener">@offstage.pr</a>, unless the client asks us not to in writing. If you appear in our content and want it removed, email us and we will act promptly.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">6. Retention and security</h2>
+        <p style="margin:0">We keep personal data only as long as needed for the purposes above, or as required by tax, accounting and other laws, then delete or anonymise it. We use reasonable technical and organisational safeguards to protect it. No method of transmission or storage is completely secure.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">7. Your rights</h2>
+        <p style="margin:0">You may ask to access a summary of your personal data, correct or update it, have it erased where it is no longer needed, withdraw consent, and nominate another person to exercise your rights. You may also raise a grievance with us, and with the Data Protection Board of India if it is not resolved.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">8. Children</h2>
+        <p style="margin:0">Our website and services are not directed at children under 18. We do not knowingly collect their personal data without verifiable parental consent.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">9. Grievance officer</h2>
+        <p style="margin:0">For questions, requests or complaints about your personal data, contact our Grievance Officer at <a href="mailto:hello@offstagepr.in">hello@offstagepr.in</a> or <a href="tel:+917370002080">+91 73700 02080</a>. We aim to acknowledge complaints within 24 hours and resolve them within 15 days.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">10. Changes</h2>
+        <p style="margin:0">We may update this policy from time to time. The latest version will always be on this page with its revision date.</p>
+      </sc-if>
+
+      <sc-if value="{{ isTerms }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0">These Terms and Conditions govern your use of this website and any services provided by Flykraft Synergies Private Limited, operating as Off Stage Productions ("Off Stage", "we", "us"). By using the website or confirming a booking, you ("Client") agree to these terms. A signed proposal or agreement for a specific event takes precedence over these terms where the two differ.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">1. Services</h2>
+        <p style="margin:0">We provide event management, production, staging, lighting, sound, visuals, creative direction and related services. The scope, deliverables, timelines and fees for each engagement are set out in a written proposal, quotation or agreement ("Proposal").</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">2. Booking and confirmation</h2>
+        <p style="margin:0">A booking is confirmed only once the Client accepts the Proposal in writing, including by email, and we receive the booking advance stated in it. Dates, crew and equipment are not reserved until then.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">3. Fees and payment</h2>
+        <p style="margin:0">Fees are in Indian Rupees and exclude GST and other applicable taxes unless stated otherwise. Unless the Proposal says otherwise, payments follow the schedule in it, with the full balance due before the event date. Late payment may lead to suspension of services, and we may charge interest on overdue amounts as permitted by law. Changes to scope, extra hours, or additions requested by the Client will be billed separately.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">4. Client responsibilities</h2>
+        <p style="margin:0">The Client will provide accurate information, timely approvals and access to the venue. The Client is responsible for venue bookings and permissions, and for licences such as police, fire, excise and music-performance licences, unless the Proposal assigns them to us. The Client is responsible for the conduct of their guests and for any damage they cause to equipment or property.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">5. Changes and cancellations</h2>
+        <p style="margin:0">Changes to date, venue or scope are subject to availability and may change the fees. Cancellations and refunds are governed by our <a href="#refund">Refund &amp; Cancellation Policy</a>.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">6. Intellectual property</h2>
+        <p style="margin:0">Concepts, designs, stage plans, content and materials we create remain our intellectual property until full payment is received. After that, the Client receives a licence to use them for the event described in the Proposal. We may feature the event, including photos and video, in our portfolio and on social media unless the Client asks us not to in writing. All website content, including the Off Stage name and logo, belongs to us and may not be used without permission.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">7. Safety and third parties</h2>
+        <p style="margin:0">We follow reasonable safety practices and may pause or change any element of an event if we consider it unsafe. Where we engage third-party vendors or venues on the Client's behalf, their own terms may also apply.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">8. Limitation of liability</h2>
+        <p style="margin:0">To the extent permitted by law, we are not liable for indirect, incidental or consequential losses, including lost profits or reputational loss. Our total liability for any claim relating to an engagement will not exceed the fees paid to us for that engagement. We are not responsible for loss of or damage to personal belongings of the Client or guests.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">9. Force majeure</h2>
+        <p style="margin:0">We are not liable for delay or failure caused by events beyond our reasonable control. These include natural disasters, extreme weather, epidemics, government orders, curfews, civil unrest, strikes, power failures and venue closures.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">10. Website use</h2>
+        <p style="margin:0">You agree not to misuse the website, attempt unauthorised access, or use its content for unlawful purposes. Links to third-party sites are provided for convenience; we are not responsible for their content.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">11. Governing law and disputes</h2>
+        <p style="margin:0">These terms are governed by the laws of India. The parties will first try to resolve any dispute amicably within 30 days. Failing that, the courts at Hazaribagh, Jharkhand will have exclusive jurisdiction.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">12. Contact</h2>
+        <p style="margin:0">Flykraft Synergies Private Limited (CIN U14101JH2024PTC022177, GSTIN 20AAFCF8404P1ZJ), Kolghatti, Near Black Tank, Reformatory School, Hazaribagh – 825319, Jharkhand · <a href="mailto:hello@offstagepr.in">hello@offstagepr.in</a> · <a href="tel:+917370002080">+91 73700 02080</a></p>
+      </sc-if>
+
+      <sc-if value="{{ isRefund }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0">This policy explains how cancellations, postponements and refunds work for services booked with Off Stage Productions, a brand of Flykraft Synergies Private Limited. Events need crew, vendors and equipment committed well in advance, so the timing of a cancellation affects what can be refunded. If a signed Proposal has different terms, those terms apply.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">1. Booking advance</h2>
+        <p style="margin:0">The booking advance secures your date and our team, and covers early planning and creative work. It is non-refundable. It can be moved to a new date under section 3.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">2. Cancellation by the client</h2>
+        <p style="margin:0">Cancellations must be sent in writing to <a href="mailto:hello@offstagepr.in">hello@offstagepr.in</a>. Charges are based on how long before the event date we receive the notice:</p>
+        <div style="display:grid;border-top:1px solid #141312">
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px;padding:14px 0;border-bottom:1px solid #d9d2c6"><strong style="color:#141312">More than 60 days</strong><span>Refund of amounts paid beyond the booking advance, less non-recoverable vendor costs</span></div>
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px;padding:14px 0;border-bottom:1px solid #d9d2c6"><strong style="color:#141312">30–60 days</strong><span>50% of the total fee is payable or retained</span></div>
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px;padding:14px 0;border-bottom:1px solid #d9d2c6"><strong style="color:#141312">15–29 days</strong><span>75% of the total fee is payable or retained</span></div>
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px;padding:14px 0;border-bottom:1px solid #d9d2c6"><strong style="color:#141312">Less than 15 days</strong><span>100% of the total fee is payable; no refund</span></div>
+        </div>
+        <p style="margin:0">In every case, costs already spent or committed to third parties are not refundable. These include venue deposits, custom fabrication, printing, travel, artist fees and rentals.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">3. Postponement</h2>
+        <p style="margin:0">If you postpone with at least 30 days' notice, we will carry amounts paid over to a new date within 6 months, subject to availability. Costs caused by the change in date may be charged extra. A second postponement, or one with less than 30 days' notice, is treated as a cancellation.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">4. Cancellation by us</h2>
+        <p style="margin:0">If we cancel for reasons within our control, we will refund all amounts paid, including the booking advance.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">5. Force majeure</h2>
+        <p style="margin:0">If an event cannot go ahead because of a force majeure event, as defined in our <a href="#terms">Terms &amp; Conditions</a>, we will first offer a new date. If that is not possible, we will refund amounts paid, minus work already done and costs committed to third parties.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">6. Changes in scope</h2>
+        <p style="margin:0">If you reduce the scope after confirmation, the fees may be revised. Charges for elements already produced or committed still apply.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">7. How refunds are paid</h2>
+        <p style="margin:0">Approved refunds are processed within 10–14 working days to the original payment method or the bank account of the paying party. Applicable taxes are adjusted as required by law. Bank or gateway charges, if any, may be deducted.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">8. Questions</h2>
+        <p style="margin:0">Email <a href="mailto:hello@offstagepr.in">hello@offstagepr.in</a> or call <a href="tel:+917370002080">+91 73700 02080</a>.</p>
+      </sc-if>
+
+      <sc-if value="{{ isCookies }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0">This Cookie Policy explains how Off Stage Productions, a brand of Flykraft Synergies Private Limited, uses cookies and similar technologies on this website.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">1. What cookies are</h2>
+        <p style="margin:0">Cookies are small text files stored on your device when you visit a website. They help the site work, remember your preferences, and show us how visitors use it.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">2. Cookies we use</h2>
+        <p style="margin:0"><strong style="color:#141312">Essential:</strong> needed for the site to work, such as security and form submission. <strong style="color:#141312">Analytics:</strong> help us understand visits and page views in aggregate so we can improve the site. <strong style="color:#141312">Embedded content:</strong> third-party services such as Instagram or video players may set their own cookies when their content is shown.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">3. Managing cookies</h2>
+        <p style="margin:0">You can block or delete cookies in your browser settings. If you block essential cookies, some parts of the site may not work properly.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">4. More information</h2>
+        <p style="margin:0">See our <a href="#privacy">Privacy Policy</a> for how we handle personal data, or write to <a href="mailto:hello@offstagepr.in">hello@offstagepr.in</a>.</p>
+      </sc-if>
+
+      <sc-if value="{{ isDisclaimer }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0">The information on this website is provided by Flykraft Synergies Private Limited, operating as Off Stage Productions, for general information only.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">1. No offer</h2>
+        <p style="margin:0">Descriptions of services, packages and past work on this site are not a binding offer. Scope, pricing and availability are confirmed only in a written Proposal.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">2. Portfolio</h2>
+        <p style="margin:0">Past events are shown to illustrate our capabilities. Each event is unique, and results depend on venue, budget, timelines and other factors. Brand names and logos of clients or partners belong to their respective owners.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">3. Accuracy</h2>
+        <p style="margin:0">We try to keep the website accurate and up to date, but we make no warranties about its completeness or reliability. We may change content at any time without notice.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">4. External links</h2>
+        <p style="margin:0">Links to third-party websites and social platforms are for convenience. We do not control or endorse their content, policies or practices.</p>
+        <h2 style="margin:24px 0 0;font-size:26px;font-weight:700;color:#141312;letter-spacing:-0.01em">5. Liability</h2>
+        <p style="margin:0">To the extent permitted by law, we are not liable for any loss arising from use of, or reliance on, this website.</p>
+      </sc-if>
+
+      <div style="margin-top:40px;padding:28px;background:#ece6dc;border-radius:14px;display:grid;gap:6px">
+        <div style="font-size:20px;font-weight:700;color:#141312">Flykraft Synergies Private Limited</div>
+        <div>Operating as Off Stage Productions</div>
+        <div>Registered office: Kolghatti, Near Black Tank, Reformatory School, Hazaribagh – 825319, Jharkhand, India</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:14px;display:flex;flex-wrap:wrap;gap:4px 20px"><span>CIN U14101JH2024PTC022177</span><span>GSTIN 20AAFCF8404P1ZJ</span></div>
+        <div><a href="mailto:hello@offstagepr.in">hello@offstagepr.in</a> · <a href="tel:+917370002080">+91 73700 02080</a> · <a href="https://instagram.com/offstage.pr" target="_blank" rel="noopener">@offstage.pr</a></div>
+      </div>
+    </article>
+  </div>
+
+  <footer style="border-top:1px solid #e3ddd3">
+    <div style="max-width:1320px;margin:0 auto;padding:32px clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:16px 24px;justify-content:space-between;align-items:center">
+      <img src="assets/logo.png" alt="Off Stage Productions" style="height:36px;width:auto">
+      <div style="font-size:14px;color:#7a7368">© 2026 Off Stage Productions, a brand of Flykraft Synergies Private Limited</div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: 'privacy' };
+  pages = [
+    ['privacy', 'Privacy Policy'], ['terms', 'Terms & Conditions'], ['refund', 'Refund & Cancellation'],
+    ['cookies', 'Cookie Policy'], ['disclaimer', 'Disclaimer']
+  ];
+  componentDidMount() {
+    this.sync = () => {
+      const h = (location.hash || '').slice(1);
+      if (this.pages.some(p => p[0] === h)) { this.setState({ page: h }); window.scrollTo({ top: 0 }); }
+    };
+    this.sync();
+    window.addEventListener('hashchange', this.sync);
+  }
+  componentWillUnmount() { window.removeEventListener('hashchange', this.sync); }
+  renderVals() {
+    const { page } = this.state;
+    return {
+      title: this.pages.find(p => p[0] === page)[1],
+      tabs: this.pages.map(([k, l]) => ({
+        href: '#' + k, label: l,
+        style: { textDecoration: 'none', padding: '10px 14px', borderRadius: 8, fontSize: 15, fontWeight: 500,
+          background: k === page ? '#141312' : 'transparent', color: k === page ? '#f6f3ee' : '#141312' }
+      })),
+      isPrivacy: page === 'privacy', isTerms: page === 'terms', isRefund: page === 'refund',
+      isCookies: page === 'cookies', isDisclaimer: page === 'disclaimer'
+    };
+  }
+}
+</script>
+</body>
+</html>
