@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f3ee;color:#141312;font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#141312;text-decoration:none}a:hover{color:oklch(0.62 0.14 70)}
+@keyframes osp-marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes osp-sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#f6f3ee">
+  <header style="position:sticky;top:0;z-index:10;background:rgba(246,243,238,0.92);backdrop-filter:blur(10px);border-bottom:1px solid #e3ddd3">
+    <div style="max-width:1320px;margin:0 auto;padding:14px clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="display:flex"><img src="assets/logo.png" alt="Off Stage Productions" style="height:44px;width:auto;display:block"></a>
+      <nav style="display:flex;align-items:center;gap:clamp(14px,2.4vw,32px);font-size:15px;font-weight:500;flex-wrap:wrap;justify-content:flex-end">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#contact" style="background:#141312;color:#f6f3ee;padding:10px 18px;border-radius:999px">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" data-screen-label="Hero" style="position:relative;overflow:hidden;background:#0f0e0d;color:#f6f3ee">
+    {{ spotlight }}
+    <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(72px,11vw,150px) clamp(20px,4vw,48px) clamp(56px,8vw,110px);display:grid;gap:40px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:oklch(0.8 0.12 75)">Events · Productions · Live experiences</div>
+      <h1 style="margin:0;font-weight:800;font-size:clamp(48px,9vw,136px);line-height:0.92;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance">We work off stage so your night can <span style="color:oklch(0.8 0.12 75)">steal the show.</span></h1>
+      <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between">
+        <p style="margin:0;max-width:46ch;font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:#cfc8bc;font-weight:300;text-wrap:pretty">A full-service production team for festivals, brand launches, concerts and celebrations — concept, stage, light, sound and every cue in between.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#contact" style="background:oklch(0.8 0.12 75);color:#141312;padding:16px 26px;border-radius:999px;font-weight:600;font-size:16px">Plan your event</a>
+          <a href="#work" style="border:1px solid #4a4540;color:#f6f3ee;padding:16px 26px;border-radius:999px;font-weight:500;font-size:16px">See our work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showMarquee }}" hint-placeholder-val="{{ true }}">
+    <div style="background:oklch(0.8 0.12 75);color:#141312;overflow:hidden;border-bottom:1px solid #141312;padding:18px 0">{{ marquee }}</div>
+  </sc-if>
+
+  <section id="services" data-screen-label="Services" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,130px) clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px">
+      <h2 style="margin:0;font-size:clamp(36px,5vw,68px);font-weight:800;letter-spacing:-0.03em;line-height:1">What we run<br>behind the curtain.</h2>
+      <p style="margin:0;max-width:38ch;font-size:17px;line-height:1.55;color:#5c564e">One crew from first sketch to final bow — so nothing gets lost between vendors.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-top:1px solid #141312">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+        <div style="padding:32px 28px 40px 0;border-bottom:1px solid #d9d2c6;display:grid;gap:18px;align-content:start">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:oklch(0.62 0.14 70)">{{ s.num }}</div>
+          <h3 style="margin:0;font-size:28px;font-weight:700;letter-spacing:-0.02em">{{ s.title }}</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#5c564e;max-width:32ch">{{ s.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="work" data-screen-label="Work" style="background:#141312;color:#f6f3ee">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,130px) clamp(20px,4vw,48px)">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px">
+        <h2 style="margin:0;font-size:clamp(36px,5vw,68px);font-weight:800;letter-spacing:-0.03em;line-height:1">Recent nights.</h2>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+            <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:28px 24px">
+        <sc-for list="{{ work }}" as="w" hint-placeholder-count="6">
+          <a href="#contact" style="display:grid;gap:14px;color:#f6f3ee">
+            <div style="aspect-ratio:4/3;border-radius:6px;background:repeating-linear-gradient(135deg,#1f1d1b 0 10px,#262320 10px 20px);display:flex;align-items:flex-end;padding:14px;box-sizing:border-box">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8f877b">event photo — {{ w.title }}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline">
+              <div style="font-size:21px;font-weight:600;letter-spacing:-0.01em">{{ w.title }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:oklch(0.8 0.12 75);text-transform:uppercase;letter-spacing:0.08em;white-space:nowrap">{{ w.tag }}</div>
+            </div>
+            <div style="font-size:15px;color:#a39b8f;margin-top:-8px">{{ w.meta }}</div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" data-screen-label="Process" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,130px) clamp(20px,4vw,48px)">
+    <h2 style="margin:0 0 56px;font-size:clamp(36px,5vw,68px);font-weight:800;letter-spacing:-0.03em;line-height:1">From idea to<br>house lights down.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px">
+      <sc-for list="{{ steps }}" as="p" hint-placeholder-count="4">
+        <div style="background:#ece6dc;border-radius:14px;padding:28px;display:grid;gap:40px;align-content:space-between;min-height:220px">
+          <div style="font-size:64px;font-weight:900;letter-spacing:-0.04em;line-height:1;color:#141312">{{ p.num }}</div>
+          <div style="display:grid;gap:8px">
+            <div style="font-size:22px;font-weight:700">{{ p.title }}</div>
+            <div style="font-size:15px;line-height:1.55;color:#5c564e">{{ p.body }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="background:oklch(0.8 0.12 75);color:#141312">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,130px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px">
+      <div style="display:grid;gap:24px;align-content:start">
+        <h2 style="margin:0;font-size:clamp(44px,6.5vw,96px);font-weight:900;letter-spacing:-0.04em;line-height:0.92">Got a date?<br>We've got the crew.</h2>
+        <p style="margin:0;font-size:18px;line-height:1.55;max-width:40ch">Tell us what you're dreaming up. We reply within one working day.</p>
+        <div style="display:grid;gap:6px;font-size:18px;font-weight:500">
+          <a href="mailto:hello@offstagepr.in">hello@offstagepr.in</a>
+          <a href="tel:+917370002080">+91 73700 02080</a>
+          <a href="https://instagram.com/offstage.pr" target="_blank" rel="noopener">Instagram — @offstage.pr</a>
+        </div>
+      </div>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#141312;color:#f6f3ee;border-radius:16px;padding:40px;display:grid;gap:12px;align-content:center">
+          <div style="font-size:34px;font-weight:800;letter-spacing:-0.02em">Cue received.</div>
+          <div style="font-size:17px;color:#cfc8bc">Thanks, {{ name }} — we'll be in touch shortly.</div>
+          <button onClick="{{ reset }}" style="justify-self:start;margin-top:12px;background:transparent;border:1px solid #4a4540;color:#f6f3ee;border-radius:999px;padding:12px 20px;font:inherit;cursor:pointer">Send another</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="background:#141312;color:#f6f3ee;border-radius:16px;padding:clamp(24px,3vw,40px);display:grid;gap:18px">
+          <label style="display:grid;gap:8px;font-size:13px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;color:#a39b8f">Name
+            <input required value="{{ name }}" onChange="{{ onName }}" style="background:transparent;border:0;border-bottom:1px solid #4a4540;color:#f6f3ee;font:400 18px 'Outfit',sans-serif;padding:8px 0;outline:none">
+          </label>
+          <label style="display:grid;gap:8px;font-size:13px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;color:#a39b8f">Email
+            <input required type="email" style="background:transparent;border:0;border-bottom:1px solid #4a4540;color:#f6f3ee;font:400 18px 'Outfit',sans-serif;padding:8px 0;outline:none">
+          </label>
+          <div style="display:grid;gap:10px">
+            <div style="font-size:13px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;color:#a39b8f">Type of event</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ types }}" as="t" hint-placeholder-count="5">
+                <button type="button" onClick="{{ t.onClick }}" style="{{ t.style }}">{{ t.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <label style="display:grid;gap:8px;font-size:13px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;color:#a39b8f">Tell us more
+            <textarea rows="3" style="background:transparent;border:0;border-bottom:1px solid #4a4540;color:#f6f3ee;font:400 18px 'Outfit',sans-serif;padding:8px 0;outline:none;resize:vertical"></textarea>
+          </label>
+          <button type="submit" style="margin-top:8px;background:oklch(0.8 0.12 75);color:#141312;border:0;border-radius:999px;padding:16px 26px;font:600 16px 'Outfit',sans-serif;cursor:pointer;justify-self:start">Send the brief</button>
+        </form>
+      </sc-if>
+    </div>
+  </section>
+
+  <footer style="background:#f6f3ee">
+    <div style="max-width:1320px;margin:0 auto;padding:40px clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center">
+      <img src="assets/logo.png" alt="Off Stage Productions" style="height:36px;width:auto">
+      <div style="display:flex;gap:24px;font-size:15px;flex-wrap:wrap">
+        <a href="https://instagram.com/offstage.pr" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:hello@offstagepr.in">hello@offstagepr.in</a>
+        <a href="tel:+917370002080">+91 73700 02080</a>
+      </div>
+    </div>
+    <div style="max-width:1320px;margin:0 auto;padding:20px clamp(20px,4vw,48px) 36px;border-top:1px solid #e3ddd3;display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:space-between;align-items:center">
+      <div style="display:flex;gap:20px;font-size:14px;flex-wrap:wrap">
+        <a href="Legal.dc.html#privacy">Privacy Policy</a>
+        <a href="Legal.dc.html#terms">Terms &amp; Conditions</a>
+        <a href="Legal.dc.html#refund">Refund &amp; Cancellation</a>
+        <a href="Legal.dc.html#cookies">Cookie Policy</a>
+        <a href="Legal.dc.html#disclaimer">Disclaimer</a>
+      </div>
+      <div style="font-size:14px;color:#7a7368;display:grid;gap:4px;text-align:right">
+        <span>© 2026 Off Stage Productions, a brand of Flykraft Synergies Private Limited</span>
+        <span>Hazaribagh, Jharkhand · CIN U14101JH2024PTC022177 · GSTIN 20AAFCF8404P1ZJ</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showMarquee&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;spotlight&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { filter: 'All', type: 'Festival', name: '', sent: false };
+  services = [
+    { num: '01', title: 'Event production', body: 'Festivals, galas, launches and weddings — planned, built and run end to end.' },
+    { num: '02', title: 'Stage & staging', body: 'Custom sets, rigging and structures designed around your venue and your story.' },
+    { num: '03', title: 'Light & sound', body: 'Show lighting, audio and visuals programmed to hit every moment on cue.' },
+    { num: '04', title: 'Creative direction', body: 'Concepts, run-of-show and show-calling that give the night a shape.' }
+  ];
+  steps = [
+    { num: '01', title: 'Brief', body: 'We listen: audience, budget, venue, the feeling you want people to leave with.' },
+    { num: '02', title: 'Concept', body: 'Moodboards, stage plans and a run-of-show you can react to.' },
+    { num: '03', title: 'Build', body: 'Crew, suppliers, tech rehearsals — all under one production manager.' },
+    { num: '04', title: 'Show', body: 'We call the cues from the wings. You enjoy the night.' }
+  ];
+  work = [
+    { title: 'Summer Lights Festival', tag: 'Events', meta: 'Open-air · 3 stages · 12,000 guests' },
+    { title: 'Aurora Brand Launch', tag: 'Productions', meta: 'Product reveal · live stream' },
+    { title: 'The Grand Gala', tag: 'Events', meta: 'Awards night · 800 guests' },
+    { title: 'Echoes Live Tour', tag: 'Productions', meta: 'Concert staging · 9 cities' },
+    { title: 'Rooftop New Year', tag: 'Events', meta: 'Countdown party · pyro & light' },
+    { title: 'Stories on Stage', tag: 'Productions', meta: 'Theatre production · 20 nights' }
+  ];
+  pill(active, dark) {
+    return { font: "500 14px 'Outfit',sans-serif", padding: '9px 16px', borderRadius: 999, cursor: 'pointer',
+      border: '1px solid ' + (active ? 'oklch(0.8 0.12 75)' : '#4a4540'),
+      background: active ? 'oklch(0.8 0.12 75)' : 'transparent', color: active ? '#141312' : '#f6f3ee' };
+  }
+  renderVals() {
+    const { filter, type, name, sent } = this.state;
+    const words = ['Festivals', 'Launches', 'Concerts', 'Galas', 'Weddings', 'Tours', 'Parties', 'Theatre'];
+    const row = [...words, ...words].map((w, i) => React.createElement('span', { key: i, style: { display: 'inline-flex', alignItems: 'center', gap: 36, paddingRight: 36 } },
+      React.createElement('span', null, w), React.createElement('span', { style: { width: 10, height: 10, background: '#141312', transform: 'rotate(45deg)', display: 'inline-block' } })));
+    return {
+      showMarquee: this.props.showMarquee ?? true,
+      marquee: React.createElement('div', { style: { display: 'flex', width: 'max-content', whiteSpace: 'nowrap', fontSize: 'clamp(22px,2.6vw,34px)', fontWeight: 800, letterSpacing: '-0.02em', textTransform: 'uppercase', animation: 'osp-marq 28s linear infinite' } }, row),
+      spotlight: (this.props.spotlight ?? true) ? React.createElement('div', { 'aria-hidden': true, style: { position: 'absolute', top: -40, right: '8%', width: 'min(60vw,720px)', height: '130%', transformOrigin: '50% 0', animation: 'osp-sway 9s ease-in-out infinite', background: 'radial-gradient(ellipse 50% 100% at 50% 0%, rgba(245,205,140,0.22), rgba(245,205,140,0.06) 55%, transparent 75%)', clipPath: 'polygon(44% 0,56% 0,100% 100%,0 100%)', pointerEvents: 'none' } }) : null,
+      services: this.services,
+      steps: this.steps,
+      filters: ['All', 'Events', 'Productions'].map(l => ({ label: l, style: this.pill(l === filter), onClick: () => this.setState({ filter: l }) })),
+      work: this.work.filter(w => filter === 'All' || w.tag === filter),
+      types: ['Festival', 'Corporate', 'Concert', 'Wedding', 'Other'].map(l => ({ label: l, style: this.pill(l === type), onClick: () => this.setState({ type: l }) })),
+      name, sent, notSent: !sent,
+      onName: e => this.setState({ name: e.target.value }),
+      submit: e => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false, name: '' })
+    };
+  }
+}
+</script>
+</body>
+</html>

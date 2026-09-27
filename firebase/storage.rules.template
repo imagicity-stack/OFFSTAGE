@@ -1,0 +1,27 @@
+rules_version = '2';
+
+// GENERATED from firebase/storage.rules.template by `npm run rules`.
+// Admin emails come from NEXT_PUBLIC_ADMIN_EMAILS — keep them in sync with Vercel.
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email != null
+        && request.auth.token.email.lower() in __ADMIN_EMAILS__;
+    }
+
+    // Event photos: public to view, admin-only to upload (images up to 25 MB) or delete.
+    match /events/{eventId}/{file} {
+      allow read: if true;
+      allow list, delete: if isAdmin();
+      allow create, update: if isAdmin()
+        && request.resource.size < 25 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
