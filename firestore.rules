@@ -8,7 +8,7 @@ service cloud.firestore {
     function isAdmin() {
       return request.auth != null
         && request.auth.token.email != null
-        && request.auth.token.email.lower() in ['admin@offstagepr.in'];
+        && request.auth.token.email.lower() in ['deweshkk@gmail.com'];
     }
 
     // Categories are public so the website can build its filters.

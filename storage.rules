@@ -8,7 +8,7 @@ service firebase.storage {
     function isAdmin() {
       return request.auth != null
         && request.auth.token.email != null
-        && request.auth.token.email.lower() in ['admin@offstagepr.in'];
+        && request.auth.token.email.lower() in ['deweshkk@gmail.com'];
     }
 
     // Event photos: public to view, admin-only to upload (images up to 25 MB) or delete.
